@@ -1,40 +1,45 @@
-app.factory('AnimalFact', function($http) { 
+app.factory('AnimalFact', function($http) {
 
   return {
     getAll: function() {
+      console.log('getting all animals')
         return new Promise((resolve, reject) =>{
-          $http.get(`http://localhost:3000/api/allAnimals`)
+          $http.get(`https://zoo-api.herokuapp.com/api/v1/animals`)
             .then((data) => {
+              console.log(data)
               resolve(data.data)
             })
+            .catch(err => console.log(err))
         })
       },
     add: function(newAnimal) {
       return new Promise((resolve, reject) =>{
-        $http.post(`http://localhost:3000/api/addAnimal`, newAnimal)
+        $http.post(`https://zoo-api.herokuapp.com/api/v1/animals`, newAnimal)
           .then((data) => {
             resolve(data)
           })
+          .catch(err => console.log(err))
         })
     },
 
     remove: function(id) {
       return new Promise((resolve,reject) => {
-        $http.delete(`http://localhost:3000/api/removeAnimal/${id}`)
+        $http.delete(`https://zoo-api.herokuapp.com/api/v1/animals`)
           .then((data) => {
             resolve()
           })
+          .catch(err => console.log(err))
       })
     },
 
     update: (id, updateInfo) => {
       return new Promise((resolve, reject) => {
-        $http.patch(`http://localhost:3000/api/updateAnimal/${id}`, updateInfo)
+        $http.patch(`https://zoo-api.herokuapp.com/api/v1/animals`, updateInfo)
         .then((data) => {
           resolve()
         })
-        .catch((err) => console.log("err:", err))
+        .catch((err) => console.log(err))
       })
-    } 
+    }
   }
 });
