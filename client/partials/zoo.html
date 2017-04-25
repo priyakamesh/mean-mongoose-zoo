@@ -7,7 +7,7 @@
 <h2>Look at all these animals you have!</h2>
 
   <div class="animalCard" ng-repeat="animal in animals">
-  <img class="animalPic" src="http://www.oregonzoo.org/sites/default/files/styles/article-full/public/H_caracal-kitten_1.jpg?itok=DsNk2oS2">
+  <img class="animalPic" src="{{animal.pic}}">
   {{ animal.name }} is a {{animal.age}} year old {{animal.species}} cared for by
     <span ng-if="animal.zookeepers.length === 0">
       no one
