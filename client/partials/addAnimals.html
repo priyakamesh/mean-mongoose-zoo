@@ -3,7 +3,7 @@
 <fieldset>
   <div>
     <label for="name">Name</label>
-    <input type="text" ng-model="newAnimal.name" placeholder="Francine" name="name">  
+    <input type="text" ng-model="newAnimal.name" placeholder="Francine" name="name">
     <label for="species">Species</label>
     <input type="text" ng-model="newAnimal.species" placeholder="Penguin" name="species">
     <label for="age">Age</label>
@@ -30,7 +30,7 @@
   <div ng-repeat="zookeeper in zookeepers">
     <div>
       <p class="zookeeperDeleteName" for={{zookeeper.name}}>{{zookeeper.name}}</p>
-      <input class="deleteZookeeperButton" type="button" name="" value="delete" ng-click="deleteZookeeper(zookeeper._id)">
+      <input class="deleteZookeeperButton" type="button" name="" value="delete" ng-click="deleteZookeeper(zookeeper.id)">
     </div>
   </div>
 </fieldset>
