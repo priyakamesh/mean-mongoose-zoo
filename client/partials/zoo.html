@@ -8,15 +8,15 @@
 
   <div class="animalCard" ng-repeat="animal in animals">
   <img class="animalPic" src="http://www.oregonzoo.org/sites/default/files/styles/article-full/public/H_caracal-kitten_1.jpg?itok=DsNk2oS2">
-  {{ animal.name }} is a {{animal.age}} year old {{animal.species}} cared for by 
-    <span ng-if="animal.zookeepers.length === 0"> 
+  {{ animal.name }} is a {{animal.age}} year old {{animal.species}} cared for by
+    <span ng-if="animal.zookeepers.length === 0">
       no one
     </span>
     <span ng-repeat="zookeeper in animal.zookeepers">
       {{$last? ' and ' : ''}}{{zookeeper.name}}{{$last? '.' : ', '}}
     </span>
     <div>
-      <input type="button" value="remove" ng-click="remove(animal._id)">
+      <input type="button" value="remove" ng-click="remove(animal.id)">
       <input type="button" value="edit" ng-click="editing = !editing">
     </div>
     <div ng-if="editing">
