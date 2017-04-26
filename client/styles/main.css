@@ -1,5 +1,5 @@
 body {
-  background-color: lightgray;
+  background-color: lightblue;
 }
 
 .animalCard {
@@ -18,14 +18,17 @@ body {
 }
 
 .titlePic {
-  width: 275px;
-  display: inline;
+  width: 50%;
+  height: 400px;
+  margin-left: 250px;
+  /*display: inline;*/
 }
 
 #title {
-  display: inline;
+  /*display: inline;*/
   font-size: 5em;
-  margin: auto;
+  /*margin: auto;*/
+  text-align: center;
 }
 
 .deleteZookeeperButton{
@@ -35,6 +38,6 @@ body {
 .zookeeperDeleteName {
   display: inline;
 }
-
-
-
+a {
+  margin-left: 150px;
+}
