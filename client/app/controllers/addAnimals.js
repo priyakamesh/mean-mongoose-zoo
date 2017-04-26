@@ -1,4 +1,4 @@
-app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact){
+app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact,TrainerFact){
 
 
   const popPage = () => {
@@ -11,6 +11,12 @@ app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact){
     ZookeeperFact.getAll()
     .then((zookeepers) => {
       $scope.zookeepers = zookeepers.zookeepers;
+      $scope.$apply()
+    })
+
+    TrainerFact.getAll()
+    .then((trainers) => {
+      $scope.trainers = trainers.trainers;
       $scope.$apply()
     })
   }
@@ -36,19 +42,45 @@ app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact){
     .then((data) => {})
     $scope.newAnimal = {}
     resetCheckboxes($scope.zookeepers)
+    let selectedtrainers = [];
+    for (var i = 0; i < $scope.trainers.length; i++) {
+      if($scope.trainers[i].checked){
+        selectedtrainers.push($scope.trainers[i])
+      }
+    }
+    console.log("checked trainers", selectedtrainers)
+    $scope.newAnimal.trainers = selectedtrainers;
+    AnimalFact.add($scope.newAnimal)
+    .then((data) => {})
+    $scope.newAnimal = {}
+    resetCheckboxes($scope.trainers)
   }
 
   $scope.addZookeeper = () => {
     ZookeeperFact.add($scope.newZookeeper)
-    .then(() => { 
+    .then(() => {
       $scope.zookeepers.push($scope.newZookeeper)
       $scope.newZookeeper = {}
+      $scope.$apply()
+    })
+  }
+   $scope.addTrainer = () => {
+    TrainerFact.add($scope.newTrainer)
+    .then(() => {
+      $scope.trainers.push($scope.newTrainer)
+      $scope.newTrainer = {}
       $scope.$apply()
     })
   }
 
   $scope.deleteZookeeper = (id) => {
     ZookeeperFact.delete(id)
+    .then(() => {
+      popPage()
+    })
+  }
+ $scope.deleteTrainer = (id) => {
+    TrainerFact.delete(id)
     .then(() => {
       popPage()
     })

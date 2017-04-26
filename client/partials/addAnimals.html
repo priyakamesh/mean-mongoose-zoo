@@ -15,6 +15,11 @@
       <input type="checkbox" name={{zookeeper.name}} value={{zookeeper.name}} ng-model="zookeeper.checked">
       <label for={{zookeeper.name}}>{{zookeeper.name}}</label>
     </div>
+    <h5>TRAINERS</h5>
+    <div ng-repeat="trainer in trainers">
+      <input type="checkbox" name={{trainer.name}} value={{trainer.name}} ng-model="trainer.checked">
+      <label for={{trainer.name}}>{{trainer.name}}</label>
+    </div>
     <input type="button" value="add animal" ng-click="addAnimal()">
   </div>
 </fieldset>
@@ -27,13 +32,30 @@
     <input type="button" value="add zookeeper" ng-click="addZookeeper()">
   </div>
 </fieldset>
+<h1>Add Trainers Here</h1>
+<fieldset>
+  <div>
+    <label for="name">Trainer name</label>
+    <input type="text" ng-model="newTrainer.name" placeholder="Suzie">
+    <input type="button" value="add trainer" ng-click="addTrainer()">
+  </div>
+</fieldset>
 
 <h1>Delete Zookeepers Here</h1>
 <fieldset>
   <div ng-repeat="zookeeper in zookeepers">
     <div>
       <p class="zookeeperDeleteName" for={{zookeeper.name}}>{{zookeeper.name}}</p>
-      <input class="deleteZookeeperButton" type="button" name="" value="delete" ng-click="deleteZookeeper(zookeeper.id)">
+      <input class="deleteZookeeperButton" type="button" value="delete" ng-click="deleteZookeeper(zookeeper.id)">
+    </div>
+  </div>
+</fieldset>
+<h1>Delete Trainers Here</h1>
+<fieldset>
+  <div ng-repeat="trainer in trainers">
+    <div>
+      <p class="trainerDeleteName" for={{trainer.name}}>{{trainer.name}}</p>
+      <input class="deleteTrainerButton" type="button" value="delete" ng-click="deleteTrainer(trainer.id)">
     </div>
   </div>
 </fieldset>
