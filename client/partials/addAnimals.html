@@ -21,6 +21,12 @@
       <label for={{trainer.name}}>{{trainer.name}}</label>
     </div>
     <input type="button" value="add animal" ng-click="addAnimal()">
+  <h5>TRICKS</h5>
+    <div ng-repeat="trick in tricks">
+      <input type="checkbox" name={{trick.name}} value={{trick.name}} ng-model="trick.checked">
+      <label for={{trick.name}}>{{trick.name}}</label>
+    </div>
+    <input type="button" value="add animal" ng-click="addAnimal()">
   </div>
 </fieldset>
 
@@ -40,6 +46,14 @@
     <input type="button" value="add trainer" ng-click="addTrainer()">
   </div>
 </fieldset>
+<h1>Add Tricks Here</h1>
+<fieldset>
+  <div>
+    <label for="name">Trick name</label>
+    <input type="text" ng-model="newTrick.name" placeholder="Suzie">
+    <input type="button" value="add trick" ng-click="addTrick()">
+  </div>
+</fieldset>
 
 <h1>Delete Zookeepers Here</h1>
 <fieldset>
@@ -56,6 +70,15 @@
     <div>
       <p class="trainerDeleteName" for={{trainer.name}}>{{trainer.name}}</p>
       <input class="deleteTrainerButton" type="button" value="delete" ng-click="deleteTrainer(trainer.id)">
+    </div>
+  </div>
+</fieldset>
+<h1>Delete Tricks Here</h1>
+<fieldset>
+  <div ng-repeat="trick in tricks">
+    <div>
+      <p class="trickDeleteName" for={{trick.name}}>{{trick.name}}</p>
+      <input class="deleteTrickButton" type="button" value="delete" ng-click="deleteTrick(trick.id)">
     </div>
   </div>
 </fieldset>
