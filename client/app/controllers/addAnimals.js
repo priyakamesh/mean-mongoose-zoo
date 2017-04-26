@@ -1,4 +1,4 @@
-app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact,TrainerFact){
+app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact,TrainerFact, TrickFact){
 
 
   const popPage = () => {
@@ -17,6 +17,12 @@ app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact,Train
     TrainerFact.getAll()
     .then((trainers) => {
       $scope.trainers = trainers.trainers;
+      $scope.$apply()
+    })
+
+    TrickFact.getAll()
+    .then((tricks) =>{
+      $scope.tricks = tricks.tricks;
       $scope.$apply()
     })
   }
@@ -54,6 +60,18 @@ app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact,Train
     .then((data) => {})
     $scope.newAnimal = {}
     resetCheckboxes($scope.trainers)
+    let selectedtricks = [];
+    for (var i = 0; i < $scope.tricks.length; i++) {
+      if($scope.tricks[i].checked){
+        selectedtricks.push($scope.tricks[i])
+      }
+    }
+    console.log("checked tricks", selectedtricks)
+    $scope.newAnimal.tricks = selectedtricks;
+    AnimalFact.add($scope.newAnimal)
+    .then((data) => {})
+    $scope.newAnimal = {}
+    resetCheckboxes($scope.tricks)
   }
 
   $scope.addZookeeper = () => {
@@ -72,6 +90,14 @@ app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact,Train
       $scope.$apply()
     })
   }
+  $scope.addTrick = () => {
+    TrickFact.add($scope.newTrick)
+    .then(() => {
+      $scope.tricks.push($scope.newTrick)
+      $scope.newTrick = {}
+      $scope.$apply()
+    })
+  }
 
   $scope.deleteZookeeper = (id) => {
     ZookeeperFact.delete(id)
@@ -81,6 +107,12 @@ app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact,Train
   }
  $scope.deleteTrainer = (id) => {
     TrainerFact.delete(id)
+    .then(() => {
+      popPage()
+    })
+  }
+   $scope.deleteTrick = (id) => {
+    TrickFact.delete(id)
     .then(() => {
       popPage()
     })
