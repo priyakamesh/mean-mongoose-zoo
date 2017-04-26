@@ -38,6 +38,21 @@ body {
 .zookeeperDeleteName {
   display: inline;
 }
+.deleteTrainerButton{
+  display: inline;
+}
+
+.trainerDeleteName {
+  display: inline;
+}
+.deleteTrickButton{
+  display: inline;
+}
+
+.trickDeleteName {
+  display: inline;
+}
+
 a {
   margin-left: 150px;
 }
