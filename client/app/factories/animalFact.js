@@ -45,6 +45,15 @@ app.factory('AnimalFact', function($http) {
           console.log('err: ', err)
         })
       })
+    },
+    getAllTypes: () =>{
+      return new Promise((resolve,reject) =>{
+        $http.get(`http://localhost:3000/api/v1/types`)
+        .then((data)=>{
+          resolve(data.data)
+        })
+        .catch(err => console.log(err))
+      })
     }
   }
 });

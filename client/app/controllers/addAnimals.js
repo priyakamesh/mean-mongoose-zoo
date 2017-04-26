@@ -25,6 +25,12 @@ app.controller('AddAnimalCtrl', function($scope, AnimalFact, ZookeeperFact,Train
       $scope.tricks = tricks.tricks;
       $scope.$apply()
     })
+    AnimalFact.getAllTypes()
+    .then((types) =>{
+      console.log("types",types.types);
+      $scope.types = types.types
+      $scope.$apply()
+    })
   }
 
   popPage()

@@ -6,10 +6,13 @@
     <input type="text" ng-model="newAnimal.name" placeholder="Francine" name="name">
     <label for="species">Species</label>
     <input type="text" ng-model="newAnimal.species" placeholder="Penguin" name="species">
-    <label for="type">Type</label>
-    <input type="text" ng-model="newAnimal.type" placeholder="Bird" name="type">
-    <label for="age">Age</label>
+    <label for="age">age</label>
     <input type="number" ng-model="newAnimal.age" placeholder="3" name="age">
+    <h5 for="type">Type</h5>
+    <div ng-repeat="type in types">
+      <input type="checkbox" name={{type.type}} value={{type.type}} ng-model="type.checked">
+      <label for={{type.type}}>{{type.type}}</label>
+    </div>
     <h5>ZOOKEEPERS</h5>
     <div ng-repeat="zookeeper in zookeepers">
       <input type="checkbox" name={{zookeeper.name}} value={{zookeeper.name}} ng-model="zookeeper.checked">
@@ -20,7 +23,6 @@
       <input type="checkbox" name={{trainer.name}} value={{trainer.name}} ng-model="trainer.checked">
       <label for={{trainer.name}}>{{trainer.name}}</label>
     </div>
-    <input type="button" value="add animal" ng-click="addAnimal()">
   <h5>TRICKS</h5>
     <div ng-repeat="trick in tricks">
       <input type="checkbox" name={{trick.name}} value={{trick.name}} ng-model="trick.checked">
