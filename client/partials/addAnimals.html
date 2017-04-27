@@ -10,21 +10,29 @@
     <input type="text" ng-model="newAnimal.type" placeholder="Bird" name="type">
     <label for="age">Age</label>
     <input type="number" ng-model="newAnimal.age" placeholder="3" name="age">
-    <h5>ZOOKEEPERS</h5>
-    <div ng-repeat="zookeeper in zookeepers">
-      <input type="checkbox" name={{zookeeper.name}} value={{zookeeper.name}} ng-model="zookeeper.checked">
-      <label for={{zookeeper.name}}>{{zookeeper.name}}</label>
+
+    <div class="zookeepers-wrapper">
+      <h5>ZOOKEEPERS</h5>
+      <div ng-repeat="zookeeper in zookeepers">
+        <input type="checkbox" name={{zookeeper.name}} value={{zookeeper.name}} ng-model="zookeeper.checked">
+        <label for={{zookeeper.name}}>{{zookeeper.name}}</label>
+      </div>
     </div>
-    <h5>TRAINERS</h5>
-    <div ng-repeat="trainer in trainers">
-      <input type="checkbox" name={{trainer.name}} value={{trainer.name}} ng-model="trainer.checked">
-      <label for={{trainer.name}}>{{trainer.name}}</label>
+
+    <div class="trainers-wrapper">
+      <h5>TRAINERS</h5>
+      <div ng-repeat="trainer in trainers">
+        <input type="checkbox" name={{trainer.name}} value={{trainer.name}} ng-model="trainer.checked">
+        <label for={{trainer.name}}>{{trainer.name}}</label>
+      </div>
     </div>
-    <input type="button" value="add animal" ng-click="addAnimal()">
-  <h5>TRICKS</h5>
-    <div ng-repeat="trick in tricks">
-      <input type="checkbox" name={{trick.name}} value={{trick.name}} ng-model="trick.checked">
-      <label for={{trick.name}}>{{trick.name}}</label>
+
+    <div>
+      <h5>TRICKS</h5>
+      <div ng-repeat="trick in tricks">
+        <input type="checkbox" name={{trick.name}} value={{trick.name}} ng-model="trick.checked">
+        <label for={{trick.name}}>{{trick.name}}</label>
+      </div>
     </div>
     <input type="button" value="add animal" ng-click="addAnimal()">
   </div>
