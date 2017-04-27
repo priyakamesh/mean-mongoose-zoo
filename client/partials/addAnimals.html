@@ -1,3 +1,4 @@
+
 <h1>Add Animals Here</h1>
 
 <fieldset>
@@ -44,7 +45,7 @@
   <div>
     <label for="name">zookeeper name</label>
     <input type="text" ng-model="newZookeeper.name" placeholder="Suzie">
-    <input type="button" value="add zookeeper" ng-click="addZookeeper()">
+    <input class="btn btn-primary" type="button" value="add zookeeper" ng-click="addZookeeper()">
   </div>
 </fieldset>
 <h1>Add Trainers Here</h1>
@@ -52,7 +53,7 @@
   <div>
     <label for="name">Trainer name</label>
     <input type="text" ng-model="newTrainer.name" placeholder="Suzie">
-    <input type="button" value="add trainer" ng-click="addTrainer()">
+    <input class="btn btn-primary" type="button" value="add trainer" ng-click="addTrainer()">
   </div>
 </fieldset>
 <h1>Add Tricks Here</h1>
@@ -60,7 +61,7 @@
   <div>
     <label for="name">Trick name</label>
     <input type="text" ng-model="newTrick.name" placeholder="Suzie">
-    <input type="button" value="add trick" ng-click="addTrick()">
+    <input class="btn btn-primary" type="button" value="add trick" ng-click="addTrick()">
   </div>
 </fieldset>
 
@@ -69,7 +70,7 @@
   <div ng-repeat="zookeeper in zookeepers">
     <div>
       <p class="zookeeperDeleteName" for={{zookeeper.name}}>{{zookeeper.name}}</p>
-      <input class="deleteZookeeperButton" type="button" value="delete" ng-click="deleteZookeeper(zookeeper.id)">
+      <input class="deleteZookeeperButton btn btn-primary" type="button" value="delete" ng-click="deleteZookeeper(zookeeper.id)">
     </div>
   </div>
 </fieldset>
@@ -78,7 +79,7 @@
   <div ng-repeat="trainer in trainers">
     <div>
       <p class="trainerDeleteName" for={{trainer.name}}>{{trainer.name}}</p>
-      <input class="deleteTrainerButton" type="button" value="delete" ng-click="deleteTrainer(trainer.id)">
+      <input class="deleteTrainerButton btn btn-primary" type="button" value="delete" ng-click="deleteTrainer(trainer.id)">
     </div>
   </div>
 </fieldset>
@@ -87,11 +88,7 @@
   <div ng-repeat="trick in tricks">
     <div>
       <p class="trickDeleteName" for={{trick.name}}>{{trick.name}}</p>
-      <input class="deleteTrickButton" type="button" value="delete" ng-click="deleteTrick(trick.id)">
+      <input class="deleteTrickButton btn btn-primary" type="button" value="delete" ng-click="deleteTrick(trick.id)">
     </div>
   </div>
 </fieldset>
-
-
-<a href="/#!/zoo"><input type="button" value="look at your zoo"></a>
-<a href="/#!/"><input type="button" value="home"></a>
