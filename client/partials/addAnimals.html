@@ -2,17 +2,27 @@
 <fieldset class="add-animals-fieldset">
   <h1 class="">Add Animals Here</h1>
   <div class="add-animals-container">
-    <div>
-      <label for="name">Name</label>
-      <input type="text" ng-model="newAnimal.name" placeholder="Francine" name="name">
-      <label for="species">Species</label>
-      <input type="text" ng-model="newAnimal.species" placeholder="Penguin" name="species">
-      <label for="type">Type</label>
-      <input type="text" ng-model="newAnimal.type" placeholder="Bird" name="type">
-      <label for="age">Age</label>
-      <input type="number" ng-model="newAnimal.age" placeholder="3" name="age">
-      <label for="pic">Picture</label>
-      <input type="url" ng-model="newAnimal.pic"  name="pic" style="width: 300px;" >
+    <div class="animal-details">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" ng-model="newAnimal.name" placeholder="Francine" name="name">
+      </div>
+      <div>
+        <label for="species">Species:</label>
+        <input type="text" ng-model="newAnimal.species" placeholder="Penguin" name="species">
+      </div>
+      <div>
+        <label for="type">Type:</label>
+        <input type="text" ng-model="newAnimal.type" placeholder="Bird" name="type">
+      </div>
+      <div>
+        <label for="age">Age:</label>
+        <input type="number" ng-model="newAnimal.age" placeholder="3" name="age">
+      </div>
+      <div>
+        <label for="pic">Picture:</label>
+        <input type="url" ng-model="newAnimal.pic"  name="pic" style="width: 300px;" >
+      </div>
     </div>
 
     <div class="checkbox-wrapper">
