@@ -1,63 +1,68 @@
-
-<h1>Add Animals Here</h1>
-
-<fieldset>
-  <div>
-    <label for="name">Name</label>
-    <input type="text" ng-model="newAnimal.name" placeholder="Francine" name="name">
-    <label for="species">Species</label>
-    <input type="text" ng-model="newAnimal.species" placeholder="Penguin" name="species">
-    <label for="type">Type</label>
-    <input type="text" ng-model="newAnimal.type" placeholder="Bird" name="type">
-    <label for="age">Age</label>
-    <input type="number" ng-model="newAnimal.age" placeholder="3" name="age">
-
-    <div class="zookeepers-wrapper">
-      <h5>ZOOKEEPERS</h5>
-      <div ng-repeat="zookeeper in zookeepers">
-        <input type="checkbox" name={{zookeeper.name}} value={{zookeeper.name}} ng-model="zookeeper.checked">
-        <label for={{zookeeper.name}}>{{zookeeper.name}}</label>
-      </div>
-    </div>
-
-    <div class="trainers-wrapper">
-      <h5>TRAINERS</h5>
-      <div ng-repeat="trainer in trainers">
-        <input type="checkbox" name={{trainer.name}} value={{trainer.name}} ng-model="trainer.checked">
-        <label for={{trainer.name}}>{{trainer.name}}</label>
-      </div>
-    </div>
-
+<fieldset class="add-animals-fieldset">
+  <h1 class="">Add Animals Here</h1>
+  <div class="add-animals-container">
     <div>
-      <h5>TRICKS</h5>
-      <div ng-repeat="trick in tricks">
-        <input type="checkbox" name={{trick.name}} value={{trick.name}} ng-model="trick.checked">
-        <label for={{trick.name}}>{{trick.name}}</label>
-      </div>
+      <label for="name">Name</label>
+      <input type="text" ng-model="newAnimal.name" placeholder="Francine" name="name">
+      <label for="species">Species</label>
+      <input type="text" ng-model="newAnimal.species" placeholder="Penguin" name="species">
+      <label for="type">Type</label>
+      <input type="text" ng-model="newAnimal.type" placeholder="Bird" name="type">
+      <label for="age">Age</label>
+      <input type="number" ng-model="newAnimal.age" placeholder="3" name="age">
     </div>
 
-    <input class="btn btn-primary" type="button" value="add animal" ng-click="addAnimal()">
+    <div class="checkbox-wrapper">
+
+      <div class="zookeepers-wrapper">
+        <h3>ZOOKEEPERS</h3>
+        <div ng-repeat="zookeeper in zookeepers">
+          <input type="checkbox" name={{zookeeper.name}} value={{zookeeper.name}} ng-model="zookeeper.checked">
+          <label for={{zookeeper.name}}>{{zookeeper.name}}</label>
+        </div>
+      </div>
+
+      <div class="trainers-wrapper">
+        <h3>TRAINERS</h3>
+        <div ng-repeat="trainer in trainers">
+          <input type="checkbox" name={{trainer.name}} value={{trainer.name}} ng-model="trainer.checked">
+          <label for={{trainer.name}}>{{trainer.name}}</label>
+        </div>
+      </div>
+
+      <div>
+        <h3>TRICKS</h3>
+        <div ng-repeat="trick in tricks">
+          <input type="checkbox" name={{trick.name}} value={{trick.name}} ng-model="trick.checked">
+          <label for={{trick.name}}>{{trick.name}}</label>
+        </div>
+      </div>
+
+    </div> <!-- end of checkbox-wrapper -->
   </div>
+  <input class="btn btn-primary" type="button" value="add animal" ng-click="addAnimal()">
 </fieldset>
 
-<h1>Add Zookeepers Here</h1>
 <fieldset>
+  <h1>Add Zookeepers Here</h1>
   <div>
     <label for="name">zookeeper name</label>
     <input type="text" ng-model="newZookeeper.name" placeholder="Suzie">
     <input class="btn btn-primary" type="button" value="add zookeeper" ng-click="addZookeeper()">
   </div>
 </fieldset>
-<h1>Add Trainers Here</h1>
+
 <fieldset>
+  <h1>Add Trainers Here</h1>
   <div>
     <label for="name">Trainer name</label>
     <input type="text" ng-model="newTrainer.name" placeholder="Suzie">
     <input class="btn btn-primary" type="button" value="add trainer" ng-click="addTrainer()">
   </div>
 </fieldset>
-<h1>Add Tricks Here</h1>
+
 <fieldset>
+  <h1>Add Tricks Here</h1>
   <div>
     <label for="name">Trick name</label>
     <input type="text" ng-model="newTrick.name" placeholder="Suzie">
@@ -65,30 +70,32 @@
   </div>
 </fieldset>
 
-<h1>Delete Zookeepers Here</h1>
 <fieldset>
+  <h1>Delete Zookeepers Here</h1>
   <div ng-repeat="zookeeper in zookeepers">
     <div>
       <p class="zookeeperDeleteName" for={{zookeeper.name}}>{{zookeeper.name}}</p>
-      <input class="deleteZookeeperButton btn btn-primary" type="button" value="delete" ng-click="deleteZookeeper(zookeeper.id)">
+      <input class="deleteZookeeperButton btn btn-danger" type="button" value="delete" ng-click="deleteZookeeper(zookeeper.id)">
     </div>
   </div>
 </fieldset>
-<h1>Delete Trainers Here</h1>
+
 <fieldset>
+  <h1>Delete Trainers Here</h1>
   <div ng-repeat="trainer in trainers">
     <div>
       <p class="trainerDeleteName" for={{trainer.name}}>{{trainer.name}}</p>
-      <input class="deleteTrainerButton btn btn-primary" type="button" value="delete" ng-click="deleteTrainer(trainer.id)">
+      <input class="deleteTrainerButton btn btn-danger" type="button" value="delete" ng-click="deleteTrainer(trainer.id)">
     </div>
   </div>
 </fieldset>
-<h1>Delete Tricks Here</h1>
+
 <fieldset>
+  <h1>Delete Tricks Here</h1>
   <div ng-repeat="trick in tricks">
     <div>
       <p class="trickDeleteName" for={{trick.name}}>{{trick.name}}</p>
-      <input class="deleteTrickButton btn btn-primary" type="button" value="delete" ng-click="deleteTrick(trick.id)">
+      <input class="deleteTrickButton btn btn-danger" type="button" value="delete" ng-click="deleteTrick(trick.id)">
     </div>
   </div>
 </fieldset>
