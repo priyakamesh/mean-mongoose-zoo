@@ -4,7 +4,7 @@ app.factory('AnimalFact', function($http) {
     getAll: function() {
       console.log('getting all animals')
         return new Promise((resolve, reject) =>{
-          $http.get(`https://zoo-api.herokuapp.com/api/v1/animals`)
+          $http.get(`http://localhost:3000/api/v1/animals`)
             .then((data) => {
               console.log(data)
               resolve(data.data)
@@ -15,7 +15,7 @@ app.factory('AnimalFact', function($http) {
     add: function(newAnimal) {
       console.log(newAnimal)
       return new Promise((resolve, reject) =>{
-        $http.post(`https://zoo-api.herokuapp.com/api/v1/animals`, newAnimal)
+        $http.post(`http://localhost:3000/api/v1/animals`, newAnimal)
           .then((data) => {
             resolve(data)
           })
@@ -25,7 +25,7 @@ app.factory('AnimalFact', function($http) {
 
     remove: function(id) {
       return new Promise((resolve,reject) => {
-        $http.delete(`https://zoo-api.herokuapp.com/api/v1/animals/${id}`)
+        $http.delete(`http://localhost:3000/api/v1/animals/${id}`)
           .then((data) => {
             resolve()
           })
@@ -36,7 +36,7 @@ app.factory('AnimalFact', function($http) {
     update: (id, updateInfo) => {
       console.log(updateInfo)
       return new Promise((resolve, reject) => {
-        $http.patch(`https://zoo-api.herokuapp.com/api/v1/animals/${id}`, updateInfo)
+        $http.patch(`http://localhost:3000/api/v1/animals/${id}`, updateInfo)
         .then((data) => {
           console.log(data)
           resolve()
