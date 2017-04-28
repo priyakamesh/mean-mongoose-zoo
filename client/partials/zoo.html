@@ -1,28 +1,25 @@
-<!-- <h1>ZOO!</h1> -->
-
-<a href="/#!/add"><input type="button" value="edit your zoo"></a>
-<a href="/#!/zoo"><input type="button" value="look at your zoo"></a>
-<a href="/#!/"><input type="button" value="home"></a>
-
-<h2>Look at all these animals you have!</h2>
+<div class="zoo-container">
 
   <div class="animalCard" ng-repeat="animal in animals">
-  <img class="animalPic" src="{{animal.pic}}">
-  {{ animal.name }} is a {{animal.age}} year old {{animal.species}} cared for by
-    <span ng-if="animal.zookeepers.length === 0">
-      no one
-    </span>
-    <span ng-repeat="zookeeper in animal.zookeepers">
-      {{$last? ' and ' : ''}}{{zookeeper.name}}{{$last? '.' : ', '}}
-    </span>
-    <div>
-      <input type="button" value="remove" ng-click="remove(animal.id)">
-      <input type="button" value="edit" ng-click="editing = !editing">
-    </div>
-    <div ng-if="editing">
-      <input type="text" ng-model="animal.name">
-      <input type="text" ng-model="animal.species">
-      <input type="text" ng-model="animal.age">
-      <input type="button" value="save" ng-click="save(animal.id, animal)">
+    <div class="card-scroll">
+      <img class="animalPic" src="{{animal.pic}}">
+      <p><h4>{{ animal.name }}</h4> is a {{animal.age}} year old {{animal.species}} cared for by</p>
+      <span ng-if="animal.zookeepers.length === 0">
+        no one
+      </span>
+      <span ng-repeat="zookeeper in animal.zookeepers">
+        {{$last? ' and ' : ''}}{{zookeeper.name}}{{$last? '.' : ', '}}
+      </span>
+      <div>
+        <input class="btn btn-danger" type="button" value="remove" ng-click="remove(animal.id)">
+        <input class="btn btn-warning" type="button" value="edit" ng-click="editing = !editing">
+      </div>
+      <div ng-if="editing">
+        <input type="text" ng-model="animal.name">
+        <input type="text" ng-model="animal.species">
+        <input type="text" ng-model="animal.age">
+        <input class="btn btn-primary" type="button" value="save" ng-click="save(animal.id, animal)">
+      </div>
     </div>
   </div>
+</div>

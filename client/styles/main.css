@@ -1,34 +1,82 @@
 body {
-  background-color: lightblue;
+  background: url('/zoo.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.brand {
+  font-family: 'Modak', cursive;
+  color: #ff0000;
+}
+
+.home-container {
+  margin-top: 45px;
+  margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-headline {
+  font-family: 'Modak', cursive;
+  color: #ff0000;
+  font-size: 10em;
+}
+
+.home-text {
+  margin-top: 17%;
+  font-family: 'Modak', cursive;
+  color: #ff0000;
+  font-size: 7em;
+  /* align-self: flex-end; */
 }
 
 .animalCard {
+  background-color: rgba(255,255,255,.5);
   border: 1px solid black;
   padding: 5px;
   margin: 5px;
   display: inline-block;
   width: 30%;
   height: 350px;
-  overflow: scroll;
+  border-radius: 8px;
+  overflow-y: scroll;
 }
 
 .animalPic {
-  width: 90%;
+  max-width: 90%;
   margin: 5%;
 }
 
-.titlePic {
-  width: 50%;
-  height: 400px;
-  margin-left: 250px;
-  /*display: inline;*/
+fieldset {
+  background-color: rgba(255, 255, 255, .5);
 }
 
-#title {
-  /*display: inline;*/
-  font-size: 5em;
-  /*margin: auto;*/
-  text-align: center;
+.add-animals-fieldset {
+  margin-top: 45px;
+}
+
+.add-animals-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkbox-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
 }
 
 .deleteZookeeperButton{
@@ -55,4 +103,11 @@ body {
 
 a {
   margin-left: 150px;
+}
+
+.zoo-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
